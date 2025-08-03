@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ChatArea.module.css';
-import { MessageInput } from './MessageInput';
+import { MessageInput } from '@/components';
 import { useServerStore } from '@/stores';
 import { useCurrentServer, useCurrentChannel } from '@/hooks';
 

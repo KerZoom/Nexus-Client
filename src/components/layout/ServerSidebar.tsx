@@ -3,7 +3,7 @@ import styles from './ServerSidebar.module.css';
 import { ServerIcon } from '@/components/server';
 import { useServerStore, useAuthStore } from '@/stores';
 import { useServerData } from '@/hooks';
-import { mockHomeserver } from '../../data/mockData';
+import { mockHomeserver } from '@/data/mockData.ts';
 
 export const ServerSidebar: React.FC = () => {
   const { servers, currentServerId } = useServerStore();
