@@ -25,6 +25,9 @@
   --color-text-primary: #DCDDDE;
   --color-text-secondary: #B9BBBE;
   --color-text-muted: #72767D;
+  --color-text-on-primary: #FFFFFF;
+  --color-text-on-success: #FFFFFF;
+  --color-text-on-danger: #FFFFFF;
   
   /* Border colors */
   --color-border: #202225;

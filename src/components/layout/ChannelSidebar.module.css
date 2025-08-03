@@ -34,6 +34,10 @@
 }
 
 /* Channel categories */
+.category-section {
+  margin-bottom: var(--spacing-md, 16px);
+}
+
 .channel-category {
   color: var(--color-text-muted, #72767D);
   font-size: 12px;
@@ -57,12 +61,64 @@
   font-size: 16px;
   display: flex;
   align-items: center;
+  gap: 6px;
   transition: background-color 0.15s ease;
+  position: relative;
 }
 
 .channel-item:hover {
   background: var(--color-background-tertiary, #292B2F);
   color: var(--color-text-primary, #DCDDDE);
+}
+
+.channel-item--active {
+  background: var(--color-background-tertiary, #292B2F);
+  color: var(--color-text-primary, #DCDDDE);
+}
+
+.channel-icon {
+  font-size: 18px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.channel-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.unread-badge {
+  background: var(--color-danger, #ED4245);
+  color: var(--color-text-on-danger, #FFFFFF);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* No channels state */
+.no-channels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted, #72767D);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.no-channels p {
+  margin: 4px 0;
+}
+
+.hint {
+  font-size: 14px;
+  color: var(--color-text-muted, #72767D);
 }
 
 /* User panel at bottom */

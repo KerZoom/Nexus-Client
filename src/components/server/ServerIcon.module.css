@@ -1,0 +1,131 @@
+/* Server icon container */
+.server-icon {
+  position: relative;
+  margin-bottom: var(--spacing-sm, 8px);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.server-icon:hover {
+  transform: scale(1.05);
+}
+
+.server-icon:active {
+  transform: scale(0.95);
+}
+
+/* Icon wrapper - handles the rounded square shape */
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px; /* Fully rounded by default */
+  background: var(--color-background-secondary, #2F3136);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-radius 0.2s ease, background-color 0.2s ease;
+  position: relative;
+}
+
+/* Discord-like hover effect - becomes more square */
+.server-icon:hover .icon-wrapper {
+  border-radius: 16px;
+  background: var(--color-primary, #5865F2);
+}
+
+/* Selected state - square with primary color */
+.server-icon--selected .icon-wrapper {
+  border-radius: 16px;
+  background: var(--color-primary, #5865F2);
+}
+
+/* Server image */
+.server-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+.server-image--loading {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Loading placeholder */
+.loading-placeholder {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary, #DCDDDE);
+  user-select: none;
+}
+
+/* Server letter fallback */
+.server-letter {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-primary, #DCDDDE);
+  user-select: none;
+}
+
+/* Unread indicator */
+.unread-indicator {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--color-danger, #ED4245);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-on-danger, #FFFFFF);
+  padding: 0 4px;
+  border: 2px solid var(--color-background-tertiary, #202225);
+}
+
+/* Selection indicator - left border like Discord */
+.selection-indicator {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: var(--color-text-primary, #DCDDDE);
+  border-radius: 0 2px 2px 0;
+  transition: height 0.2s ease;
+}
+
+.server-icon:hover .selection-indicator {
+  height: 32px;
+}
+
+.server-icon--selected .selection-indicator {
+  height: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  
+  .server-icon:hover .icon-wrapper,
+  .server-icon--selected .icon-wrapper {
+    border-radius: 12px;
+  }
+  
+  .server-letter,
+  .loading-placeholder {
+    font-size: 16px;
+  }
+}

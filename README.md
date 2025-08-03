@@ -1,69 +1,48 @@
-# React + TypeScript + Vite
+# Nexus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The goal of Nexus is to create a modern, performant Matrix client that provides an intuitive user experience while leveraging Matrix's decentralized, federated protocol. 
+Nexus aims to deliver intuitive chat functionality with significantly lower resource usage compared to traditional clients whilst also being censorship resistant.
 
-Currently, two official plugins are available:
+## Current Status
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Nexus is in active development with a working foundation:
 
-## Expanding the ESLint configuration
+- Server and channel navigation
+- Basic interactive UI with proper styling
+- State management architecture
+- Component-based architecture
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Planned Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Intuitive interface** with three-panel layout (servers, channels, chat)
+- **Performance optimized** targeting less than 100MB RAM usage
+- **Matrix protocol integration** with full federation support
+- **Modern UI** using lightweight CSS modules and custom user themes
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Frontend**: React 18+ with TypeScript and Vite
+- **Backend**: Tauri 2.x with Rust for native performance
+- **State Management**: Zustand for predictable state updates
+- **Styling**: CSS Modules with custom properties for theming
+- **Matrix Integration**: matrix-rust-sdk for protocol handling
+
+### Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── layout/         # App layout components
+│   ├── chat/           # Chat-related components
+│   ├── server/         # Server/channel components
+│   └── ui/             # Reusable UI components
+├── hooks/              # Custom React hooks
+├── stores/             # Zustand state management
+├── data/               # Mock data and utilities
+├── utils/              # Helper functions
+└── styles/             # Global styles and themes
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is licensed under the MIT License.
