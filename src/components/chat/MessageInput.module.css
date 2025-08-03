@@ -1,0 +1,109 @@
+/* Message input container - floating bubble */
+.input-container {
+  background: var(--color-background-secondary, #2F3136);
+  border: 1px solid var(--color-border, #202225);
+  border-radius: 24px;
+  padding: 11px 16px;
+  margin: 0 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-sm, 8px);
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.input-container--focused {
+  border-color: var(--color-primary, #5865F2);
+}
+
+.input-container--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ContentEditable input */
+.message-input {
+  flex: 1;
+  min-height: 22px;
+  max-height: 200px;
+  overflow-y: auto;
+  color: var(--color-text-primary, #DCDDDE);
+  font-size: 16px;
+  line-height: 1.375;
+  font-family: var(--font-primary);
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Placeholder styling */
+.message-input:empty::before {
+  content: attr(data-placeholder);
+  color: var(--color-text-muted, #72767D);
+  pointer-events: none;
+  position: absolute;
+}
+
+.message-input:focus:empty::before {
+  color: var(--color-text-muted, #72767D);
+}
+
+/* Custom scrollbar for input */
+.message-input::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-input::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.message-input::-webkit-scrollbar-thumb {
+  background: var(--color-text-muted, #72767D);
+  border-radius: 4px;
+}
+
+/* Send button */
+.send-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary, #5865F2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.send-button:hover:not(:disabled) {
+  background: #4752C4;
+}
+
+.send-button--disabled {
+  background: var(--color-text-muted, #72767D);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.send-button:disabled {
+  cursor: not-allowed;
+}
+
+/* Character counter */
+.character-counter {
+  position: absolute;
+  bottom: -24px;
+  right: 16px;
+  font-size: 12px;
+  color: var(--color-text-muted, #72767D);
+  background: var(--color-background-primary, #36393F);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border, #202225);
+}

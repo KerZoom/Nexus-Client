@@ -1,0 +1,8 @@
+/* Main application layout - 3 column grid */
+.app-layout {
+  display: grid;
+  grid-template-columns: 72px 240px 1fr;
+  height: 100vh;
+  background: var(--color-background-primary, #36393F);
+  font-family: var(--font-primary, 'Inter', sans-serif);
+}

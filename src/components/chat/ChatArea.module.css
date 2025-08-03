@@ -1,0 +1,61 @@
+/* Chat area - rightmost panel */
+.chat-area {
+  background: var(--color-background-primary, #36393F);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Chat header */
+.chat-header {
+  height: 48px;
+  background: var(--color-background-primary, #36393F);
+  border-bottom: 1px solid var(--color-border, #202225);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md, 16px);
+  box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
+  flex-shrink: 0;
+}
+
+.channel-name {
+  color: var(--color-text-primary, #DCDDDE);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Chat content area */
+.chat-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-md, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0; /* Important for flex overflow */
+}
+
+.welcome-message {
+  text-align: center;
+  color: var(--color-text-secondary, #B9BBBE);
+}
+
+.welcome-message h2 {
+  color: var(--color-text-primary, #DCDDDE);
+  margin-bottom: var(--spacing-sm, 8px);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.welcome-message p {
+  font-size: 16px;
+}
+
+/* Message input area */
+.message-input-area {
+  padding: var(--spacing-md, 16px);
+  background: var(--color-background-primary, #36393F);
+  flex-shrink: 0;
+  position: relative; /* For character counter positioning */
+}
