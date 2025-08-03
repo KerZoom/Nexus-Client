@@ -3,6 +3,8 @@
 The goal of Nexus is to create a modern, performant Matrix client that provides an intuitive user experience while leveraging Matrix's decentralized, federated protocol. 
 Nexus aims to deliver intuitive chat functionality with significantly lower resource usage compared to traditional clients whilst also being censorship resistant.
 
+<img width="1276" height="910" alt="image" src="https://github.com/user-attachments/assets/6d50e860-48f2-4243-86f1-049106ecd857" />
+
 ## Current Status
 
 Nexus is in active development with a working foundation:
